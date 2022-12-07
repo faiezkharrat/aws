@@ -6,10 +6,15 @@ from werkzeug.security import check_password_hash
 
 app = Flask(__name__)
 
+
+
+
 auth = HTTPBasicAuth()
 
 users = {
     "admin": generate_password_hash("admin"),
+    "admin2": generate_password_hash("admin2"),
+
 }
 
 
