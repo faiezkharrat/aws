@@ -13,7 +13,6 @@ auth = HTTPBasicAuth()
 
 users = {
     "admin": generate_password_hash("admin"),
-    "admin2": generate_password_hash("admin2"),
 
 }
 
@@ -25,11 +24,11 @@ def verify_password(username, password):
         return username
 
 
-@app.route('/')
+@app.route('/testApi')
 @auth.login_required()
 def hello_world():
     response = requests.get(url="https://carbonwatch.kayrros.com/power/europe")
-    return (response.text).format(auth.current_user())
+    return (response.text)
 
 
 if __name__ == '__main__':
